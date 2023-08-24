@@ -5,7 +5,7 @@ import { FcGoogle } from "react-icons/fc";
 import { signIn } from "next-auth/react";
 import { Loader2 } from "lucide-react";
 
-export default function Dashboard() {
+function SignIn() {
   const [isLoading, setIsLoading] = useState(false);
 
   async function loginWithGoogle() {
@@ -18,7 +18,8 @@ export default function Dashboard() {
   }
 
   return (
-    <div>
+    <div className="flex w-full h-[100vh] items-center justify-center flex-col space-y-3">
+      <h1 className="font-bold text-3xl">Sign into your account</h1>
       <Button
         disabled={isLoading}
         onClick={() => loginWithGoogle()}
@@ -35,3 +36,5 @@ export default function Dashboard() {
     </div>
   );
 }
+
+export default SignIn;
